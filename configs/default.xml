@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature name="ATM"/>
+	<feature name="Autentica"/>
+	<feature name="OperacoesBancaria"/>
+	<feature name="Sacar"/>
+	<feature name="Depositar"/>
+	<feature name="VerSaldo"/>
+</configuration>

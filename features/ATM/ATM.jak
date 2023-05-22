@@ -1,0 +1,59 @@
+package atm;
+
+// ATM.java
+// Represents an automated teller machine
+
+public class ATM
+{
+   
+   private int currentAccountNumber; // current user's account number
+   private Screen screen; // ATM's screen
+   private Keypad keypad; // ATM's keypad
+   private CashDispenser cashDispenser; // ATM's cash dispenser
+   private DepositSlot depositSlot; // ATM's deposit slot
+   private BankDatabase bankDatabase; // account information database
+   private boolean userAuthenticated; // whether user is authenticated
+
+   // constants corresponding to main menu options
+   private static final int BALANCE_INQUIRY = 1;
+   private static final int WITHDRAWAL = 2;
+   private static final int DEPOSIT = 3;
+   private static final int EXIT = 4;
+
+   // no-argument ATM constructor initializes instance variables
+   public ATM()
+   {
+      userAuthenticated = false; // user is not authenticated to start
+      currentAccountNumber = 0; // no current account number to start
+      screen = new Screen(); // create screen
+      keypad = new Keypad(); // create keypad
+      cashDispenser = new CashDispenser(); // create cash dispenser
+      depositSlot = new DepositSlot(); // create deposit slot
+      bankDatabase = new BankDatabase(); // create acct info database
+   } // end no-argument ATM constructor
+
+   // start ATM
+   public void run()
+   {
+      // welcome and authenticate user; perform transactions
+      while ( true )
+      {
+         // loop while user is not yet authenticated
+         while ( !userAuthenticated )
+         {
+            screen.displayMessageLine( "\nWelcome!" );
+            authenticateUser(); // authenticate user
+         } // end while
+
+         performTransactions(); // user is now authenticated
+         userAuthenticated = false; // reset before next ATM session
+         currentAccountNumber = 0; // reset before next ATM session
+         screen.displayMessageLine( "\nThank you! Goodbye!" );
+      } // end while
+   } // end method run
+
+
+} // end class ATM
+
+
+

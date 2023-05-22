@@ -1,0 +1,28 @@
+/**
+ * TODO description
+ */
+public class Autentica {
+	
+	
+	   // attempts to authenticate user against database
+	   public void authenticateUser()
+	   {
+	      screen.displayMessage( "\nPlease enter your account number: " );
+	      int accountNumber = keypad.getInput(); // input account number
+	      screen.displayMessage( "\nEnter your PIN: " ); // prompt for PIN
+	      int pin = keypad.getInput(); // input PIN
+
+	      // set userAuthenticated to boolean value returned by database
+	      userAuthenticated =
+	         bankDatabase.authenticateUser( accountNumber, pin );
+
+	      // check whether authentication succeeded
+	      if ( userAuthenticated )
+	      {
+	         currentAccountNumber = accountNumber; // save user's account #
+	      } // end if
+	      else
+	         screen.displayMessageLine(
+	             "Invalid account number or PIN. Please try again." );
+	   } // end method authenticateUser
+}

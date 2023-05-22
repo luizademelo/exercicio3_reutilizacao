@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="642,31"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="ATM">
+			<feature mandatory="true" name="Autentica"/>
+			<and mandatory="true" name="OperacoesBancaria">
+				<feature name="Sacar"/>
+				<feature name="Depositar"/>
+				<feature name="VerSaldo"/>
+			</and>
+		</and>
+	</struct>
+</featureModel>
